@@ -25,13 +25,18 @@ def main():
     for index,value in enumerate(json_disponibles):
         print(f'{index} - {value}')
         max_value = index
+        if index == 9: break
+        
+    print('10 - Salir')
     
     index_archivo = ''
     while not(index_archivo.isnumeric()):
         index_archivo = input('\nIngrese el número del archivo que desea usar: ')
-        if index_archivo.isnumeric() and int(index_archivo) > max_index:
-            index_archivo = ''
 
+    if int(index_archivo) == 10:
+        print('Adiós!')
+        return False
+    
     #Se inicializa la Clase que prepara el plan de pelea.
     pre_fight = FightPlan(json_disponibles[int(index_archivo)],'')
     
