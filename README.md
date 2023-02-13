@@ -58,3 +58,7 @@ La estructura del archivo JSON debe ser la siguiente:
 }`
 
 *Con ambos métodos de instalación, van incluídos archivos JSON de prueba.*
+
+## Desarrollo y Testing
+Este programa ha sido desarrollado con **Python 3.9.2** en un equipo Pixelbook con **ChromeOS v108**.
+La imagen de Docker ha sido creada en **Kubuntu 22.04**. 
