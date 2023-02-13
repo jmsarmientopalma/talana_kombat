@@ -5,7 +5,7 @@ Para instalar/ejecutar este programa, cuentas con 2 opciones:
 1. Clonar/Bajar este repositorio GIT
 2. Ejecutar el contenedor Docker
 
-## Clonar el Repositorio (Recomendado)
+## Clonar el Repositorio
 `Para realizar la acción detallada en esta sección, es necesario tener instalado el cliente de GIT`
 
 Para clonar este repositorio, diríjase desde la consola (terminal) a la ruta local de su equipo en donde desea almacenar la aplicación.
@@ -34,7 +34,7 @@ Desde la consola, ejecutar el siguiente comando:
 
 Una vez obtenida la imagen, levantar la ejecución con salida por consola (no *silent* o en background).
 
->docker run talana-kombat
+>docker run -ti talana-kombat
 
 Para acceder al repositorio en Docker Hub, diríjase a la siguiente URL:
 
