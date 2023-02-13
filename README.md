@@ -34,7 +34,7 @@ Desde la consola, ejecutar el siguiente comando:
 
 Una vez obtenida la imagen, levantar la ejecución con salida por consola (no *silent* o en background).
 
->docker run -ti talana-kombat
+>docker run -ti jmsarmiento/talana-kombat
 
 Para acceder al repositorio en Docker Hub, diríjase a la siguiente URL:
 
