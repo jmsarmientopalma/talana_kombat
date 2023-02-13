@@ -5,7 +5,7 @@ Para instalar/ejecutar este programa, cuentas con 2 opciones:
 1. Clonar/Bajar este repositorio GIT
 2. Ejecutar el contenedor Docker
 
-## Clonar el Repositorio
+## Clonar el Repositorio (Recomendado)
 `Para realizar la acción detallada en esta sección, es necesario tener instalado el cliente de GIT`
 
 Para clonar este repositorio, diríjase desde la consola (terminal) a la ruta local de su equipo en donde desea almacenar la aplicación.
@@ -58,6 +58,8 @@ La estructura del archivo JSON debe ser la siguiente:
 }`
 
 *Con ambos métodos de instalación, van incluídos archivos JSON de prueba.*
+
+`IMPORTANTE: En caso de presentar errores en la ejecución (comúnmente EOFError) de la imagen obtenida, esto suele deberse a problemas de formato en la codificación y/o charset de la virtualización de Docker. Si presenta este problema, agradecería informarme y obtener la aplicación por medio de GIT para su correcta ejecución.`
 
 ## Desarrollo y Testing
 Este programa ha sido desarrollado con **Python 3.9.2** en un equipo Pixelbook con **ChromeOS v108**.
