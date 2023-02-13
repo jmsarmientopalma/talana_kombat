@@ -34,6 +34,12 @@ Desde la consola, ejecutar el siguiente comando:
 
 Una vez obtenida la imagen, levantar la ejecución con salida por consola (no *silent* o en background).
 
+>docker run talana-kombat
+
+Para acceder al repositorio en Docker Hub, diríjase a la siguiente URL:
+
+[Docker Hub TalanaKombat](https://hub.docker.com/r/jmsarmiento/talana-kombat)
+
 ## Archivo JSON de pelea
 La estructura JSON que la aplicación cargará, será tomada de archivos alojados en el directorio **json/**. Lo ideal es situar en dicha ruta el o los archivos antes de ejecutar la aplicación.
 La aplicación tomará un máximo de 10 archivos de la ruta indicada, de los cuales usted deberá elegir uno para ejecutar el *plan de pelea*.
@@ -50,3 +56,5 @@ La estructura del archivo JSON debe ser la siguiente:
         "golpes":["K","","K","P","P"]
     }
 }`
+
+*Con ambos métodos de instalación, van incluídos archivos JSON de prueba.*

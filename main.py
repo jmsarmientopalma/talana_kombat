@@ -13,12 +13,15 @@ from modules.FightPlan import FightPlan
 from modules.Fight import Fight
 from modules.messages import welcome
 from modules.archivos import lista_json
+from os import name
 
 def main():
-    #Mensaje de Bienvenida y primera interacción.
-    # welcome()
+    ruta_base = 'json\\' if name in ['win','Windows','win32'] else 'json/'
     
-    json_disponibles = lista_json() 
+    #Mensaje de Bienvenida y primera interacción.
+    welcome()
+    
+    json_disponibles = lista_json(ruta_base) 
     print('A continuación se listan los archivos JSON disponibles para cargar como plan de pelea.\n')
     
     max_index = 0
@@ -38,7 +41,7 @@ def main():
         return False
     
     #Se inicializa la Clase que prepara el plan de pelea.
-    pre_fight = FightPlan(json_disponibles[int(index_archivo)],'')
+    pre_fight = FightPlan(json_disponibles[int(index_archivo)],'',ruta_base)
     
     #Se inicializa la Clase de pelea e inicia la secuencia
     fight = Fight(pre_fight.fighters)
