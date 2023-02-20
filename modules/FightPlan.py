@@ -19,7 +19,6 @@ class FightPlan():
     def __init__(self,nombre_json,cadena_json,ruta_base):
         import json
         self.json = json
-        
         self.nombre_json = nombre_json
         self.cadena_json = cadena_json
         self.ruta_base = ruta_base
@@ -47,7 +46,7 @@ class FightPlan():
             self.arnaldor['life'] = self.fighter_life
             print('Peleadores preparados...!')
             self.bell()
-        except:
+        except Exception as err:
             print('Los peleadores no se sienten preprados...')
             self.exit_error('Los planes de pelea no son adecuados. Selecciones otro JSON.')
         
@@ -97,6 +96,7 @@ class FightPlan():
         
         contador = 3
         time.sleep(1)
+        
         while contador:
             print(f'{contador}...')
             time.sleep(1)

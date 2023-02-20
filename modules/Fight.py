@@ -19,7 +19,8 @@ class Fight():
         
     def check_special(self,moves,specials):
         #Validación para cuando uno de los peleadores viene con menos movimientos
-        if moves == None : return [self.rnd_msg_none(),0]
+        if moves is None : return [self.rnd_msg_none(),0]
+        
         #Validación y atajo para cuando el peleador no golpea
         if moves[1].strip() == '': return [self.rnd_msg_movimiento(),0]
         
@@ -44,6 +45,7 @@ class Fight():
     
     def movimientos(self):
         import itertools as itr
+        
         primero = dict(list(filter(lambda f : f['starter'] == True, self.fighters))[0])
         segundo = dict(list(filter(lambda f : f['starter'] == False, self.fighters))[0])
         
@@ -66,18 +68,22 @@ class Fight():
             tmp_list_hit = self.check_special(attacker1, spe_primero)
             print('- '+primero['name']+str(tmp_list_hit[0])+self.rnd_msg_to()+segundo['name']+'\n')
             segundo['life'] = segundo['life'] - tmp_list_hit[1]
+            
             if segundo['life'] <= 0:
                 self.msg_win(primero)
                 return True
+            
             self.time.sleep(2)
            
             # print(attacker2)
             tmp_list_hit = self.check_special(attacker2, spe_segundo)
             print('- '+segundo['name']+str(tmp_list_hit[0])+self.rnd_msg_to()+primero['name']+'\n')
             primero['life'] = primero['life'] - tmp_list_hit[1]
+            
             if primero['life'] <= 0:
                 self.msg_win(segundo)
                 return True
+            
             self.time.sleep(2)
             
     
