@@ -1,5 +1,4 @@
 class FightPlan():
-    ruta_base = 'json/'
     json_raw = ''
     fighter_life = 6
     techniques_tonyn = [
@@ -16,7 +15,7 @@ class FightPlan():
         {'mov' : 'ASA' , 'golpe' : 'P', 'damage' : 2, 'name' : 'Taladoken'}
     ]
     
-    def __init__(self,nombre_json,cadena_json,ruta_base):
+    def __init__(self,nombre_json,cadena_json,ruta_base='static/json/'):
         import json
         self.json = json
         self.nombre_json = nombre_json

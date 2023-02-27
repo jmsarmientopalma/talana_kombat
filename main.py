@@ -16,7 +16,7 @@ def main():
         - Si quiere obviar el mensaje de Bienvenida y saltarse la acción de presionar una tecla, comente la llamada a la función welcome()
         - Si quiere evitar que la consola se limpie después de la Bienvenida, pase el parámetro False a welcome. Ej.: welcome(False) 
     '''
-    ruta_base = 'json\\' if name in ['win','Windows','win32'] else 'json/'
+    ruta_base = 'static\\json\\' if name in ['win','Windows','win32'] else 'static/json/'
     
     #Mensaje de Bienvenida y primera interacción.
     welcome()
