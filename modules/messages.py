@@ -1,4 +1,5 @@
 from os import system, name
+
 import random
 
 def welcome(clear=True):

@@ -1,6 +1,6 @@
+from pathlib import Path
+
 def lista_json(ruta_json):
-    from pathlib import Path
-    
     archivos_json = []
     basepath = Path(ruta_json)    
     json_files = (archivo for archivo in basepath.iterdir() if archivo.is_file())

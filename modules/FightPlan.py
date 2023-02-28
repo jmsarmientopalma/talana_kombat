@@ -1,3 +1,6 @@
+import json
+import time
+
 class FightPlan():
     json_raw = ''
     fighter_life = 6
@@ -16,8 +19,6 @@ class FightPlan():
     ]
     
     def __init__(self,nombre_json,cadena_json,ruta_base='static/json/'):
-        import json
-        self.json = json
         self.nombre_json = nombre_json
         self.cadena_json = cadena_json
         self.ruta_base = ruta_base
@@ -30,7 +31,7 @@ class FightPlan():
     
     def read_file(self):
         with open(self.ruta_base+self.nombre_json) as file:
-            self.json_raw = self.json.load(file)
+            self.json_raw = json.load(file)
         return self.json_raw
             
     def prepare_fighters(self):
@@ -91,8 +92,6 @@ class FightPlan():
         return [self.tonyn,self.arnaldor]
     
     def bell(self):
-        import time
-        
         contador = 3
         time.sleep(1)
         

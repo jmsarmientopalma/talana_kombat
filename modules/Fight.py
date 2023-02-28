@@ -1,11 +1,11 @@
+import time
+import random
+import itertools as itr
+
 class Fight():
     
     def __init__(self,fighters):
-        import time
-        import random
         from modules.messages import rnd_msg_hit, rnd_msg_movimiento, rnd_msg_to, rnd_msg_none
-        self.time = time
-        self.random = random
         self.fighters = fighters
         self.rnd_msg_hit = rnd_msg_hit
         self.rnd_msg_movimiento = rnd_msg_movimiento
@@ -44,8 +44,6 @@ class Fight():
         if self.first_move_msg(dict(list(filter(lambda f : f['starter'] == True, self.fighters))[0])['name']): self.movimientos()
     
     def movimientos(self):
-        import itertools as itr
-        
         primero = dict(list(filter(lambda f : f['starter'] == True, self.fighters))[0])
         segundo = dict(list(filter(lambda f : f['starter'] == False, self.fighters))[0])
         
@@ -57,14 +55,7 @@ class Fight():
         mov_segundo = list(zip(segundo['movimientos'],segundo['golpes']))
         spe_segundo = segundo['tech']
         
-        # print(primero)
-        # print(segundo)
-        # print('--------------')
-        # print(mov_primero)
-        # print(mov_segundo)
-        
         for (attacker1,attacker2) in itr.zip_longest(mov_primero, mov_segundo):
-            # print(attacker1)
             tmp_list_hit = self.check_special(attacker1, spe_primero)
             print('- '+primero['name']+str(tmp_list_hit[0])+self.rnd_msg_to()+segundo['name']+'\n')
             segundo['life'] = segundo['life'] - tmp_list_hit[1]
@@ -73,9 +64,8 @@ class Fight():
                 self.msg_win(primero)
                 return True
             
-            self.time.sleep(2)
+            time.sleep(2)
            
-            # print(attacker2)
             tmp_list_hit = self.check_special(attacker2, spe_segundo)
             print('- '+segundo['name']+str(tmp_list_hit[0])+self.rnd_msg_to()+primero['name']+'\n')
             primero['life'] = primero['life'] - tmp_list_hit[1]
@@ -84,7 +74,7 @@ class Fight():
                 self.msg_win(segundo)
                 return True
             
-            self.time.sleep(2)
+            time.sleep(2)
             
     
     def msg_win(self,winner):
