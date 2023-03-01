@@ -8,3 +8,7 @@ def lista_json(ruta_json):
     for item in json_files:
         archivos_json.append(item.name)
     return archivos_json    
+
+def json_content(ruta,archivo):
+    with open(ruta+archivo, 'r') as archivo:
+        return archivo.read()

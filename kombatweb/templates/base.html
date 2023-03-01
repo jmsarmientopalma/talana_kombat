@@ -1,0 +1,56 @@
+{% load django_bootstrap5 %}
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+
+    <title>Talana Kombat Web</title>
+
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+
+</head>
+<body>
+    
+    <div class="container-fluid !direction !spacing">
+        
+        <h2>Bienvenido a Talana Fight!!</h2>
+
+        <h3>Instrucciones de uso:</h3>
+
+        <article>
+            Para cargar las instrucciones de pelea en el programa, debe dejar el archivo JSON dentro del directorio <i>kombat/static/json/</i> antes de continuar.
+        </article>
+
+        <br><br>
+
+        <h3>Formato JSON:</h3>
+
+        <article>
+            El JSON a cargar debe estar en el formato adecuado. De lo contrario, el programa no procesara la pelea.
+            El formato requerido es el siguiente: <br><br>
+
+            <code class="text-center">
+                {'player1': {'movimientos':[lista-de-movimientos], 'golpes':[lista-de-golpes]},'player2': {misma-estructura-player1}}'
+            </code>
+        </article>
+
+    </div>
+
+    <br><br>
+
+    <div class="container-fluid !direction !spacing fondo-oscuro">
+        {% block content %}
+        {% endblock content %}
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    
+</body>
+</html>

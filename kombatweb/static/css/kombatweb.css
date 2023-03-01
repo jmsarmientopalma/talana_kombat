@@ -1,0 +1,23 @@
+code {
+    width: 100%;
+}
+
+h2 {
+    text-align: center;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.tabla {
+    width: 250px;
+    margin: auto;
+}
+
+.tabla th {
+    text-align: center;
+}
+
+.tabla td {
+    text-align: center;
+    cursor: pointer;
+}

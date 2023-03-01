@@ -2,18 +2,19 @@ from os import system, name
 
 import random
 
-def welcome(clear=True):
-    if clear: clear_console()
-    
-    print('##### Bienvenido a Talana Fight!! #####\n')
-    print('--- Instrucciones de uso:')
-    print('Para cargar las instrucciones de pelea en el programa, debe dejar el archivo JSON dentro del directorio \'json\' antes de continuar.')
-    print('\n--- Formato JSON:')
-    print('El JSON a cargar debe estar en el formato adecuado. De lo contrario, el programa no procesara la pelea.\nEl formato requerido es el siguiente:\n')
-    print('{\'player1\': {\'movimientos\':[lista-de-movimientos], \'golpes\':[lista-de-golpes]},\'player2\': {misma-estructura-player1}}\n')
-    input('\nPresione cualquier ENTER cuando este listo para iniciar...')
-    
-    if clear: clear_console()            
+def welcome(console=True, clear=True):
+    if console:
+        if clear: clear_console()
+        
+        print('##### Bienvenido a Talana Fight!! #####\n')
+        print('--- Instrucciones de uso:')
+        print('Para cargar las instrucciones de pelea en el programa, debe dejar el archivo JSON dentro del directorio \'json\' antes de continuar.')
+        print('\n--- Formato JSON:')
+        print('El JSON a cargar debe estar en el formato adecuado. De lo contrario, el programa no procesara la pelea.\nEl formato requerido es el siguiente:\n')
+        print('{\'player1\': {\'movimientos\':[lista-de-movimientos], \'golpes\':[lista-de-golpes]},\'player2\': {misma-estructura-player1}}\n')
+        input('\nPresione cualquier ENTER cuando este listo para iniciar...')
+        
+        if clear: clear_console()            
     
 def clear_console():
     system('cls') if name in ['win','Windows','win32'] else system('clear')

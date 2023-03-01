@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/kombatweb.css' %}">
+
+<p>
+    A continuación se listan los archivos JSON disponibles para cargar como plan de pelea. Seleccione un archivo:
+</p>
+
+<div class="container tabla">
+    <table class="table table-dark table-striped table-hover">
+        <tr>
+            <th>Archivos Disponibles</th>
+        </tr>
+        {% for archivo in archivos %}
+        <tr>
+            <td>{{ archivo }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+<div>
+    <p>Contenido del archivo JSON:</p>
+    <code>
+        
+    </code>
+</div>
+{% endblock content %}
