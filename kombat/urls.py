@@ -18,6 +18,7 @@ from django.urls import include, path
 
 urlpatterns = [
     path('', include('kombatweb.urls')),
+    path('', include('fight.urls')),
     #path("admin/", admin.site.urls),
     
 ]

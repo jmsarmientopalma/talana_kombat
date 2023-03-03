@@ -1,8 +1,9 @@
 $(".color-td").click( function() {
     archivo = $(this).text();
-    console.log(archivo);
 
     csrf = $("[name='csrfmiddlewaretoken'").eq(0).val();
+
+    $("#hdnFileName").val(archivo);
 
     data = {
         "archivo" : archivo,

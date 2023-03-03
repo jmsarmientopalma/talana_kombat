@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block content %}
+{% block kombatweb %}
 
 {% load static %}
 
@@ -30,6 +30,7 @@
 <code id="codeJson" class="code1">
     <i>seleccione un archivo desde la lista...</i>
 </code>
+<input type="hidden" id="hdnFileName">
 {% csrf_token %}
 <script src="{% static 'js/kombatweb.js' %}"></script>
-{% endblock content %}
+{% endblock kombatweb %}

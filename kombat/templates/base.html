@@ -51,8 +51,8 @@
     </div>
 
     <div class="container-fluid fondo-oscuro">
-        {% block content %}
-        {% endblock content %}
+        {% block kombatweb %}
+        {% endblock kombatweb %}
     </div>
 
     <!-- ESPACIADOR -->
@@ -67,6 +67,15 @@
         </div>
         <div class="col-sm-4">&nbsp;</div>
     </div>
-    
+
+    <!-- ESPACIADOR -->
+    <div class="row">
+        <div class="col-md-auto">&nbsp;</div>
+    </div>
+
+    <div class="alert alert-dark" role="alert">
+        {% block fight %}
+        {% endblock fight %}
+    </div>
 </body>
 </html>

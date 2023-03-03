@@ -18,10 +18,11 @@ class FightPlan():
         {'mov' : 'ASA' , 'golpe' : 'P', 'damage' : 2, 'name' : 'Taladoken'}
     ]
     
-    def __init__(self,nombre_json,cadena_json,ruta_base='static/json/'):
+    def __init__(self, nombre_json, cadena_json, ruta_base='static/json/', consola = True):
         self.nombre_json = nombre_json
         self.cadena_json = cadena_json
         self.ruta_base = ruta_base
+        self.consola = consola
         
         if self.nombre_json.strip() != '':
             try:
@@ -92,20 +93,24 @@ class FightPlan():
         return [self.tonyn,self.arnaldor]
     
     def bell(self):
-        contador = 3
-        time.sleep(1)
         
-        while contador:
-            print(f'{contador}...')
+        if self.consola:
+            contador = 3 
             time.sleep(1)
-            contador = contador-1
             
-        print('\nFIGHT!!')
-        time.sleep(1)
+            while contador:
+                print(f'{contador}...')
+                time.sleep(1)
+                contador = contador-1
+                
+            print('\nFIGHT!!')
+            time.sleep(1)
         
         self.fighters = self.starting_fighter()
         # print(self.json.dumps(self.fighters, indent=2))
-        time.sleep(0.5)
+        
+        if self.consola: time.sleep(0.5)
+        
         return True
         
     def exit_error(self, error):
