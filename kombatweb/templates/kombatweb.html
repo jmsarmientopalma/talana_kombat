@@ -11,22 +11,25 @@
 </p>
 
 <div class="container tabla">
-    <table class="table table-dark table-striped table-hover">
+    <table class="table table-dark table-hover">
         <tr>
             <th>Archivos Disponibles</th>
         </tr>
         {% for archivo in archivos %}
         <tr>
-            <td>{{ archivo }}</td>
+            <td class="color-td">{{ archivo }}</td>
         </tr>
         {% endfor %}
     </table>
 </div>
 
 <div>
-    <p>Contenido del archivo JSON:</p>
-    <code>
-        
-    </code>
+    <p>Contenido del archivo JSON seleccionado:</p>
 </div>
+
+<code id="codeJson" class="code1">
+    <i>seleccione un archivo desde la lista...</i>
+</code>
+{% csrf_token %}
+<script src="{% static 'js/kombatweb.js' %}"></script>
 {% endblock content %}

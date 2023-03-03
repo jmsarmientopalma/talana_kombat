@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from django.http import JsonResponse
+from django.core import serializers
 
 import modules.archivos as ar
 
@@ -8,6 +10,15 @@ def index(request):
     # template = loader.get_template('kombatweb/index.html')
     files = ar.lista_json('kombat/static/json/')
     context = {
-        "archivos" : files
+        "archivos" : files,
     }
     return render(request, 'kombatweb.html', context)
+
+def trae_contenido_json(request):
+    if request.method == 'POST':
+        print(request.POST["archivo"])
+        respuesta = ar.json_content('kombat/static/json/', request.POST["archivo"])
+        
+        return JsonResponse(respuesta, status=200)
+    else:
+        return JsonResponse({"error": "BAD REQUEST"}, status=400)

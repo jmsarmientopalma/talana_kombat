@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "kombatweb.apps.KombatwebConfig",
+    "kombatweb",
     "django_bootstrap5",
 ]
 

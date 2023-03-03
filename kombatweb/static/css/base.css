@@ -1,3 +1,7 @@
+html, body {
+    width: 100%;
+}
+
 .fondo-oscuro {
     background-color: slategrey;
     padding: 50px auto;

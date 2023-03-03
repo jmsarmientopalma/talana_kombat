@@ -10,6 +10,8 @@
 
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
 
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+
     <title>Talana Kombat Web</title>
 
     {% bootstrap_css %}
@@ -43,14 +45,28 @@
 
     </div>
 
-    <br><br>
+    <!-- ESPACIADOR -->
+    <div class="row">
+        <div class="col-md-auto">&nbsp;</div>
+    </div>
 
-    <div class="container-fluid !direction !spacing fondo-oscuro">
+    <div class="container-fluid fondo-oscuro">
         {% block content %}
         {% endblock content %}
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <!-- ESPACIADOR -->
+    <div class="row">
+        <div class="col-md-auto">&nbsp;</div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-4">&nbsp;</div>
+        <div class="col-sm-4 text-center">
+            <a class="btn btn-primary btn-sm " href="#" role="button">Iniciar Pelea</a>
+        </div>
+        <div class="col-sm-4">&nbsp;</div>
+    </div>
     
 </body>
 </html>

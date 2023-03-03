@@ -1,4 +1,5 @@
 from pathlib import Path
+import json
 
 def lista_json(ruta_json):
     archivos_json = []
@@ -11,4 +12,4 @@ def lista_json(ruta_json):
 
 def json_content(ruta,archivo):
     with open(ruta+archivo, 'r') as archivo:
-        return archivo.read()
+        return json.load(archivo)

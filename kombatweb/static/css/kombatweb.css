@@ -1,11 +1,18 @@
-code {
-    width: 100%;
-}
-
 h2 {
     text-align: center;
     width: 100%;
     margin-top: 50px;
+}
+
+.code1 {
+    padding: 10px;
+    margin: 5px auto;
+    background-color: rgb(212, 212, 212);
+    width: 500px;
+}
+
+.color-td {
+    color: aquamarine;
 }
 
 .tabla {
