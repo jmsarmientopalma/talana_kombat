@@ -34,3 +34,16 @@
 {% csrf_token %}
 <script src="{% static 'js/kombatweb.js' %}"></script>
 {% endblock kombatweb %}
+
+{% block fight %}
+
+<h4 id="spnFightIdle" class="text-primary">Esperando a los peleadores...!</h4>
+<h4 id="spnFightOn" class="text-primary">Pelea en curso...</h4>
+<h4 id="spnFightEnd" class="text-danger">Pelea terminada.</h4>
+<div id="divRelato">
+    <!-- Relato de la pelea -->
+</div>
+
+<script src="{% static 'js/fight.js' %}"></script>
+
+{% endblock fight %}

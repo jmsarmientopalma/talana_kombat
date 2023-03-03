@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "kombat",
     "kombatweb",
-    "fight",
     "django_bootstrap5",
 ]
 
@@ -72,6 +71,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = "kombat.wsgi.application"
+
+SESSION_ENGINE = "django.contrib.sessions.backends.signed_cookies"
 
 
 # Database

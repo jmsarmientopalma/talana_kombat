@@ -22,12 +22,17 @@
     
     <div class="container-fluid !direction !spacing">
         
-        <h2>Bienvenido a Talana Fight!!</h2>
+        <h1 class="text-info">Bienvenido a Talana Fight!!</h1>
+
+        <!-- ESPACIADOR -->
+        <div class="row">
+            <div class="col-md-auto">&nbsp;</div>
+        </div>
 
         <h3>Instrucciones de uso:</h3>
 
         <article>
-            Para cargar las instrucciones de pelea en el programa, debe dejar el archivo JSON dentro del directorio <i>kombat/static/json/</i> antes de continuar.
+            Para cargar las instrucciones de pelea en el programa, debe dejar el archivo JSON dentro del directorio <i>kombatweb/static/json/</i> antes de continuar.
         </article>
 
         <br><br>
@@ -63,7 +68,7 @@
     <div class="row">
         <div class="col-sm-4">&nbsp;</div>
         <div class="col-sm-4 text-center">
-            <a class="btn btn-primary btn-sm " href="#" role="button">Iniciar Pelea</a>
+            <a class="btn btn-primary btn-sm " href="#" role="button" onclick="sse_pelea(event)">Iniciar Pelea</a>
         </div>
         <div class="col-sm-4">&nbsp;</div>
     </div>
