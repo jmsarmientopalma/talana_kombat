@@ -3,7 +3,8 @@ $(".color-td").click( function() {
 
     csrf = $("[name='csrfmiddlewaretoken'").eq(0).val();
 
-    $("#hdnFileName").val(archivo);
+    // $("#hdnFileName").val(archivo);
+    $("#spnShowFileName").html(archivo);
 
     data = {
         "archivo" : archivo,

@@ -1,17 +1,26 @@
 $("#spnFightOn").hide();
 $("#spnFightEnd").hide();
+$("#spinnerFight").hide();
 
 function sse_pelea(event) {
     event.preventDefault();
 
-    let archivo = $("#hdnFileName").val();
+    // let archivo = $("#hdnFileName").val();
+    let archivo = $("#spnShowFileName").html();
 
     if (archivo.trim() == "") {
         alert("Por favor seleccione un archivo del listado superior.");
         return false;
     }
 
+    // Se limpia el contenido anterior
+    $("#divRelato").html("");
+
+    $("#btnFight").attr("disabled", "disabled");
+    $("#spinnerFight").show();
+
     $("#spnFightIdle").hide();
+    $("#spnFightEnd").hide();
     $("#spnFightOn").show();
 
     const evtSource = new EventSource("sse/");
@@ -34,6 +43,8 @@ function sse_pelea(event) {
         evtSource.close();
         $("#spnFightOn").hide();
         $("#spnFightEnd").show();
+        $("#btnFight").attr("disabled", false);
+        $("#spinnerFight").hide();
     });
 
     //Control de error
@@ -42,5 +53,7 @@ function sse_pelea(event) {
         console.error("EventSource failed :", err);
         $("#spnFightOn").hide();
         $("#spnFightEnd").show();
+        $("#btnFight").attr("disabled", false);
+        $("#spinnerFight").hide();
     };
 }
