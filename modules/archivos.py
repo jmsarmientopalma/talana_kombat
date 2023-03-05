@@ -1,4 +1,5 @@
 from pathlib import Path
+import os
 import json
 
 
@@ -21,3 +22,12 @@ def save_json_file(ruta,file):
     with open(ruta+file.name, 'wb+') as arch:
         for chunk in file.chunks():
             arch.write(chunk)   
+            
+
+def delete_file(file):
+    ruta = "kombatweb/static/json/"
+    if os.path.exists(ruta+file):
+        os.remove(ruta+file)
+        return True
+    else:
+        return False
