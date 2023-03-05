@@ -22,3 +22,14 @@ $(".color-td").click( function() {
         }
     });
 });
+
+eliminar = (archivo) => {
+    const regexp = /^\w+.(json)$/ig
+
+    if (regexp.test(archivo)) {
+        path = 'delete/' + archivo.trim().toLowerCase();
+        location.assign(path); 
+    } else {
+       alert('El parámetro es incorrecto.'); 
+    }
+}
