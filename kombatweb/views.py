@@ -8,10 +8,12 @@ import modules.archivos as ar
 from modules.FightPlan import FightPlan
 from modules.Fight import Fight
 
-ruta_base = 'kombatweb\\static\\json\\' if name in ['win','Windows','win32'] else 'kombatweb/static/json/'
-
 # Create your views here.
 def index(request):
+    request.session["ruta_base"] = 'kombatweb\\static\\json\\' if name in ['win','Windows','win32'] else 'kombatweb/static/json/'
+    
+    ruta_base = request.session.get("ruta_base",'kombatweb/static/json/')
+    
     files = ar.lista_json(ruta_base)
     context = {
         "archivos" : files,
@@ -20,6 +22,8 @@ def index(request):
 
 def trae_contenido_json(request):
     if request.method == 'POST':
+        ruta_base = request.session.get("ruta_base",'kombatweb/static/json/')
+        
         print(request.POST["archivo"])
         respuesta = ar.json_content(ruta_base, request.POST["archivo"])
         
@@ -30,6 +34,7 @@ def trae_contenido_json(request):
         return JsonResponse({"error": "BAD REQUEST"}, status=400)
     
 def show_fight(request):
+    ruta_base = request.session.get("ruta_base",'kombatweb/static/json/')
     archivo = request.session.get("file_name",'ejemplo1.json')
     
     #Se inicializa la Clase que prepara el plan de pelea.

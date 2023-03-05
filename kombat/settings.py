@@ -37,9 +37,9 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "kombat",
-    "kombatweb",
     "django_bootstrap5",
+    "kombatweb",
+    "upload",
 ]
 
 MIDDLEWARE = [

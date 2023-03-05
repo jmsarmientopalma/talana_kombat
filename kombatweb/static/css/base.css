@@ -2,8 +2,17 @@ html, body {
     width: 100%;
 }
 
+h3.text-info {
+    text-align: center;
+    padding-top: 20px;
+}
+
 .fondo-oscuro {
     background-color: slategrey;
     padding: 50px auto;
     color: aliceblue;
+}
+
+.upload_ok_msg {
+    margin: 40% auto;
 }

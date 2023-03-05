@@ -1,0 +1,80 @@
+{% load django_bootstrap5 %}
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+
+    <title>Upload JSON</title>
+
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+</head>
+<body>
+
+    <div class="container-fluid !direction !spacing">
+        
+        <div class="row ${1| ,row-cols-2,row-cols-3, auto,justify-content-md-center,|}">
+            <div class="col-sm-12">
+                <h3 class="text-info">Subir nuevo JSON</h3>
+            </div>
+        </div>
+
+        <div class="row ${1| ,row-cols-2,row-cols-3, auto,justify-content-md-center,|}">
+            <div class="col-sm-3">&nbsp;</div>
+            <div class="col-sm-6">
+                <p>
+                    Desde este módulo podrá subir a la aplicación nuevos archivos JSON con la secuencia de pelea para ser ejecutada. <br>
+                    Recuerde que el formato debe ser el indicado en la página de inicio y el archivo debe tener la extensión <i>JSON</i>
+                </p>
+            </div>
+            <div class="col-sm-3">&nbsp;</div>
+        </div>
+
+        
+        <!-- ESPACIADOR -->
+        <div class="row">
+            <div class="col-md-auto">&nbsp;</div>
+        </div>
+
+        <div class="row ${1| ,row-cols-2,row-cols-3, auto,justify-content-md-center,|} fondo-oscuro" style="padding-top: 10px;">
+            <div class="col-sm-4">&nbsp;</div>
+            <div class="col-sm-4">
+                
+                <div class="alert alert-light" role="alert">
+
+                    <div class="row ${1| ,row-cols-2,row-cols-3, auto,justify-content-md-center,|}">
+                        <div class="col-sm-12">
+                            
+                            <form action="" method="post" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <div class="alert alert-dark" role="alert">
+                                    <table>
+                                        {{ form }}
+                                    </table>
+                                </div>
+        
+                                <input type="submit" class="btn btn-primary btn-sm " role="button" value="Guardar JSON" />
+                            </form>
+        
+                        </div>
+                    </div>
+        
+                </div>
+
+            </div>
+            <div class="col-sm-4">&nbsp;</div>
+        </div>
+
+    </div>
+    
+</body>
+</html>

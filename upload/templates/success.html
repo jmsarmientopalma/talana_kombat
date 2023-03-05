@@ -1,0 +1,51 @@
+{% load django_bootstrap5 %}
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+
+    <title>Archivo Guardado!</title>
+
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+</head>
+<body>
+    <div class="container !direction !spacing">
+        
+        <div class="row ${1| ,row-cols-2,row-cols-3, auto,justify-content-md-center,|}">
+            <div class="col-sm-3">&nbsp;</div>
+            <div class="col-sm-6">
+                <div class="alert alert-success text-center upload_ok_msg" role="alert">
+                    JSON guardado correctamente!
+                </div>
+            </div>
+            <div class="col-sm-3">&nbsp;</div>
+        </div>
+
+        <!-- ESPACIADOR -->
+        <div class="row">
+            <div class="col-md-auto">&nbsp;</div>
+        </div>
+
+        <div class="row ${1| ,row-cols-2,row-cols-3, auto,justify-content-md-center,|}">
+            <div class="col-sm-3">&nbsp;</div>
+            <div class="col-sm-6">
+                <div class="text-center">
+                    <button class="btn btn-primary btn-sm" role="button" onclick="location.assign('/')">
+                        Volver al Inicio
+                    </button>
+                </div>
+            </div>
+            <div class="col-sm-3">&nbsp;</div>
+        </div>
+    </div>
+</body>
+</html>
